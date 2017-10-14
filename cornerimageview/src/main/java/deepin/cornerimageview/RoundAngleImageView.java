@@ -16,19 +16,20 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 /**
- * 实现圆角
+ * 实现圆角头像
  */
 public class RoundAngleImageView extends ImageView {
 
+    private static final int defaultCornerSize = 20; // 单位dp
     private Paint paint;
-    /**
-     * 个人理解是
-     *
-     * 这两个都是画圆的半径
-     */
-    private int roundWidth = 20;
-    private int roundHeight = 20;
     private Paint paint2;
+
+    /**
+     * 根据3点确定一个圆的原理，顶点，向横向边延伸roundWidth确定第2个点，向纵向边延伸确定第3个点。
+     * 然后去掉圆外面部分
+     */
+    private int roundWidth = defaultCornerSize;
+    private int roundHeight = defaultCornerSize;
 
     public RoundAngleImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -46,7 +47,6 @@ public class RoundAngleImageView extends ImageView {
     }
 
     private void init(Context context, AttributeSet attrs) {
-
         if (attrs != null) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundAngleImageView);
             roundWidth = a.getDimensionPixelSize(R.styleable.RoundAngleImageView_roundWidth, roundWidth);
@@ -71,15 +71,18 @@ public class RoundAngleImageView extends ImageView {
         Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Config.ARGB_8888);
         Canvas canvas2 = new Canvas(bitmap);
         super.draw(canvas2);
-        drawLiftUp(canvas2);
-        drawLiftDown(canvas2);
+
+        // 分别裁剪4个角
+        drawLeftUp(canvas2);
+        drawLeftDown(canvas2);
         drawRightUp(canvas2);
         drawRightDown(canvas2);
+
         canvas.drawBitmap(bitmap, 0, 0, paint2);
         bitmap.recycle();
     }
 
-    private void drawLiftUp(Canvas canvas) {
+    private void drawLeftUp(Canvas canvas) {
         Path path = new Path();
         path.moveTo(0, roundHeight);
         path.lineTo(0, 0);
@@ -89,7 +92,7 @@ public class RoundAngleImageView extends ImageView {
         canvas.drawPath(path, paint);
     }
 
-    private void drawLiftDown(Canvas canvas) {
+    private void drawLeftDown(Canvas canvas) {
         Path path = new Path();
         path.moveTo(0, getHeight() - roundHeight);
         path.lineTo(0, getHeight());
@@ -118,5 +121,4 @@ public class RoundAngleImageView extends ImageView {
         path.close();
         canvas.drawPath(path, paint);
     }
-
 }
