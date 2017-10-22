@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    tools:context="com.example.fivestarratingbar.MainActivity">
+
+<TextView
+    android:layout_marginTop="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="速度评分"
+    />
+    <com.example.fivestarratingbar.RatingBar
+        android:id="@+id/id_ratingbar1"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        app:allStarsCount="5"
+        app:curSelectValue="1.5"
+        app:starEmpty="@drawable/star_empty"
+        app:starFill="@drawable/star_full"
+        app:starHalf="@drawable/star_half_full"
+        app:starImageSize="35dp"
+        app:starPadding="10dp"
+        app:stepSize="Half"></com.example.fivestarratingbar.RatingBar>
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="满意度评分"/>
+    <com.example.fivestarratingbar.RatingBar
+        android:id="@+id/id_ratingbar2"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        app:allStarsCount="5"
+        app:curSelectValue="1.5"
+        app:starEmpty="@drawable/star_empty"
+        app:starFill="@drawable/star_full"
+        app:starHalf="@drawable/star_half_full"
+        app:starImageSize="35dp"
+        app:starPadding="10dp"
+        app:stepSize="Half"></com.example.fivestarratingbar.RatingBar>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="舒适度评分"/>
+    <com.example.fivestarratingbar.RatingBar
+        android:id="@+id/id_ratingbar3"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        app:allStarsCount="5"
+        app:curSelectValue="1.5"
+        app:starEmpty="@drawable/star_empty"
+        app:starFill="@drawable/star_full"
+        app:starHalf="@drawable/star_half_full"
+        app:starImageSize="35dp"
+        app:starPadding="10dp"
+        app:stepSize="Half"></com.example.fivestarratingbar.RatingBar>
+</LinearLayout>
