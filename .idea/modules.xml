@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cornerimageview/cornerimageview.iml" filepath="$PROJECT_DIR$/cornerimageview/cornerimageview.iml" />
       <module fileurl="file://$PROJECT_DIR$/fivestarratingbar/fivestarratingbar.iml" filepath="$PROJECT_DIR$/fivestarratingbar/fivestarratingbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpagerindicate/viewpagerindicate.iml" filepath="$PROJECT_DIR$/viewpagerindicate/viewpagerindicate.iml" />
     </modules>
   </component>
 </project>

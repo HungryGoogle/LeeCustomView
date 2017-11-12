@@ -1,1 +1,1 @@
-include ':app', ':cornerimageview', ':fivestarratingbar'
+include ':app', ':cornerimageview', ':fivestarratingbar', ':viewpagerindicate', ':viewpagerindicate'
